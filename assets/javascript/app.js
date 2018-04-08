@@ -1,4 +1,6 @@
 // Global Vs
+  let score = 0; 
+
 
 // Initialize Firebase ============================================
   const config = {
@@ -51,7 +53,8 @@
       console.log(firebaseUser); 
       btnLogout.classList.remove('disabled'); 
       // Change text after login
-      $('#loginMessage').text(`Welcome ${firebaseUser}`); 
+      $('#loginMessage').text('Welcome to the Game!'); 
+      $('#userName').text(firebaseUser); 
 
     } else {
       console.log('Not logged in'); 
@@ -92,8 +95,12 @@
   })
 // ================================================================
 
-// ================================================================
-
+// User Score======================================================
+  $('.buttons').on('click', '#wordBtn', event => {
+    score += 10; 
+    console.log(score); 
+    $('#currentScore').text(score); 
+  })
 
 
 // ================================================================
