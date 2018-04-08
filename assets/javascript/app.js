@@ -54,12 +54,14 @@
       btnLogout.classList.remove('disabled'); 
       // Change text after login
       $('#loginMessage').text('Welcome to the Game!'); 
-      $('#userName').text(firebaseUser); 
+      $('#userName').text(email); 
 
     } else {
       console.log('Not logged in'); 
       btnLogout.classList.add('disabled'); 
       $('#loginMessage').text('Sign in'); 
+      $('#userName').text('Sign in to play'); 
+
     }
   });
 
