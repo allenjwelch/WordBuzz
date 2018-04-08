@@ -1,0 +1,40 @@
+:root {
+  --mainColor: grey; 
+  --secColor: blue; 
+}
+
+body {
+  height: 100%; 
+  display:grid; 
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(50px, auto) minmax(250px, auto) minmax(250px, auto) minmax(50px, auto); 
+  grid-gap: 1em;
+}
+
+.header, .footer {
+  grid-column: 1/-1; 
+  background-color: var(--mainColor); 
+  padding: 10px;
+
+}
+
+.addWord {
+  grid-column: 1; 
+  background-color: var(--secColor); 
+  padding: 10px;
+
+}
+
+.buttons {
+  grid-column: 1; 
+  background-color: var(--mainColor); 
+  padding: 10px;
+
+}
+
+.scoreBoard {
+  grid-column: 2; 
+  grid-row: 2/4; 
+  padding: 10px;
+  border: 2px solid black; 
+}
