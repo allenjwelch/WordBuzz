@@ -1,108 +1,103 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
   <link rel="stylesheet" href="assets/css/reset.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
+  
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
 
-    
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
     
 
   <title>WordBuzz</title>
 </head>
 <body>
-  <div class="header">header</div>
+  <div class="header">header
+    <div class="ui secondary menu signIn">
+      <div class="right menu">Sign In
+        <i class="user big icon"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui modal">
+    <i class="close icon"></i>
+    <!-- Container for the demo -->
+    <div class="a">
+      <div class="b">
+        <h2 class="title">Firebase Email &amp; Password Authentication</h2>
+      </div>
+      <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+        <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+
+        <input type="text" id="userEmail" name="email" placeholder="Email">
+        <input type="password" id="userPassword" name="password" placeholder="Password">
+
+        <!-- Container where we'll display the user details -->
+        <div class="quickstart-user-details-container">
+          Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+          <div>Firebase auth <code>currentUser</code> object value:</div>
+          <!-- <pre><code id="quickstart-account-details">null</code></pre> -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="ui orange button" id="btnLogin" name="login">Login</button>
+      <button class="ui orange button" id="btnSignUp" name="signup">Sign Up</button>
+      <button class="ui orange button disabled" id="btnLogout" name="logout">Logout</button>
+
+    </div>
+  </div>
+
+ 
   
-  <div class="addWord">addWord
-    <div class="ui action input">
-      <input type="text" placeholder="Add new Buzz Word">
-      <button class="ui teal right labeled icon button">
+  <div class="addWord">
+    <div class="ui action input fluid big">
+      <input type="text" placeholder="Add new Buzz Word" id = "addWordInput">
+      <button class="ui teal right labeled icon button inverted" id = "addWordBtn">
         <i class="comments icon"></i>
         Add
       </button>
     </div>
   </div>
   
-  <div class="buttons">buttons
-    <button class="ui orange button">Orange</button>
-
-  </div>
+  <div class="buttons">buttons</div>
   
   <div class="scoreBoard">scoreboard
-      <table class="ui very basic collapsing celled table">
-          <thead>
-            <tr><th>Employee</th>
-            <th>Correct Guesses</th>
-          </tr></thead>
-          <tbody>
-            <tr>
-              <td>
-                <h4 class="ui image header">
-                  <img src="/images/avatar2/small/lena.png" class="ui mini rounded image">
-                  <div class="content">
-                    Lena
-                    <div class="sub header">Human Resources
-                  </div>
-                </div>
-              </h4></td>
-              <td>
-                22
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h4 class="ui image header">
-                  <img src="/images/avatar2/small/matthew.png" class="ui mini rounded image">
-                  <div class="content">
-                    Matthew
-                    <div class="sub header">Fabric Design
-                  </div>
-                </div>
-              </h4></td>
-              <td>
-                15
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h4 class="ui image header">
-                  <img src="/images/avatar2/small/lindsay.png" class="ui mini rounded image">
-                  <div class="content">
-                    Lindsay
-                    <div class="sub header">Entertainment
-                  </div>
-                </div>
-              </h4></td>
-              <td>
-                12
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h4 class="ui image header">
-                  <img src="/images/avatar2/small/mark.png" class="ui mini rounded image">
-                  <div class="content">
-                    Mark
-                    <div class="sub header">Executive
-                  </div>
-                </div>
-              </h4></td>
-              <td>
-                11
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-
-
+    <table class="ui selectable inverted table">
+      <thead>
+        <th>User</th>
+        <th>Correct Guesses</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td> user1 </td>
+          <td> 22 </td>
+        </tr>
+        <tr>
+          <td> user2 </td>
+          <td> 15 </td>
+        </tr>
+        <tr>
+          <td> user3 </td>
+          <td> 45 </td>
+        </tr>
+        <tr>
+          <td> user4 </td>
+          <td> 25 </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+        
   
   <div class="footer">footer</div>
   

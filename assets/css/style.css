@@ -7,7 +7,7 @@ body {
   height: 100%; 
   display:grid; 
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(50px, auto) minmax(250px, auto) minmax(250px, auto) minmax(50px, auto); 
+  grid-template-rows: minmax(50px, 70px) minmax(50px, auto) minmax(250px, auto) minmax(50px, 50px); 
   grid-gap: 1em;
 }
 
@@ -37,4 +37,8 @@ body {
   grid-row: 2/4; 
   padding: 10px;
   border: 2px solid black; 
+}
+
+.button {
+  margin: 50px; 
 }
