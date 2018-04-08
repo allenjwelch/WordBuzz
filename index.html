@@ -18,11 +18,15 @@
   <title>WordBuzz</title>
 </head>
 <body>
-  <div class="header">header
-    <div class="ui secondary menu signIn">
+  <div class="header">
+    <div class="ui secondary menu">
+      <div class="left menu">
+        <h1>Buzz Word!</h1>
+      </div>
+
       <div class="right menu">
-        <h3 id="loginMessage"></h3>
-        <i class="user big icon"></i>
+        <h3 class= "signIn" id="loginMessage"></h3>
+        <i class="user big icon signIn"></i>
       </div>
     </div>
   </div>
@@ -55,7 +59,7 @@
   <div class="addWord">
     <div class="ui action input fluid big">
       <input type="text" placeholder="Add new Buzz Word" id = "addWordInput">
-      <button class="ui teal right labeled icon button inverted" id = "addWordBtn">
+      <button class="ui blue right labeled icon button" id = "addWordBtn">
         <i class="comments icon"></i>
         Add
       </button>
@@ -66,14 +70,30 @@
     <h4>Buzz Words!</h4>
   </div>
   
-  <div class="scoreBoard">scoreboard
-    <div id="userScore">
-      <h3 id="userName"></h3>
-      <h3 id="currentScore"></h3>
+  <div class="scoreBoard">
+    <h1>Score Board</h1>
+    <div class="ui segments">
+      <div class="ui segment">
+        <h2>User Score</h2>
+      </div>
+      <div class="ui secondary segment">
+        <h3 id="userName"></h3>
+        <h3 id="currentScore"></h3>
+      </div>
     </div>
 
-    <h3>Score Board</h3>
-    <table class="ui selectable inverted table">
+    <div class="ui segments">
+      <div class="ui segment">
+          <h2>Current High Score</h2>
+        </div>
+        <div class="ui secondary segment">
+          <h3 id="highScoreUser"></h3>
+          <h3 id="highScore"></h3>
+        </div>
+    </div>
+    
+
+    <!-- <table class="ui selectable table">
       <thead>
         <th>User</th>
         <th>Correct Guesses</th>
@@ -96,12 +116,17 @@
           <td> 25 </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
+
+    <!-- <button class="ui orange button disabled" id="btnLogout" name="logout">Logout</button> -->
+
   </div>
 
-        
   
-  <div class="footer">footer</div>
+  
+  <div class="footer">
+    <p>Copyright&copy; Allen Welch 2018</p>
+  </div>
   
   <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>

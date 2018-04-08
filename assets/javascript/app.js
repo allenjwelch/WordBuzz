@@ -1,6 +1,7 @@
 // Global Vs
   let score = 0; 
-
+  let highScore = '';
+  var highScoreUser = "";
 
 // Initialize Firebase ============================================
   const config = {
@@ -97,12 +98,55 @@
   })
 // ================================================================
 
-// User Score======================================================
-  $('.buttons').on('click', '#wordBtn', event => {
-    score += 10; 
-    console.log(score); 
-    $('#currentScore').text(score); 
-  })
+// User Score and Update Firebase =================================
+  if (firebaseUser) {
+    $('.buttons').on('click', '#wordBtn', event => {
+      score += 10; 
+      console.log(score); 
+      $('#currentScore').text(`Score: ${score}`); 
+  
+      // Firebase
+      console.log(email);
+      console.log(score);
+    
+      if (score > highScore) {
+    
+        console.log('You now have the high score!'); 
+    
+        // Save the new price in Firebase. This will cause our "value" callback above to fire and update the UI.
+        database.ref().set({
+          highScoreUser: email,
+          highScore: score
+        });
+      }   
+      // Prevent default behavior
+      event.preventDefault();
+    })
+  }
+// ================================================================
+
+// Update Firebase ================================================
+  const database = firebase.database();
+  database.ref().on("value", function(snapshot) {
+
+    // If Firebase has a highScore and highScoreUser stored, update our client-side variables
+    if (snapshot.child("highScore").exists() && snapshot.child("highScoreUser").exists()) {
+      // Set the variables for highBidder/highPrice equal to the stored values.
+      highScoreUser = snapshot.val().highScoreUser;
+      highScore = parseInt(snapshot.val().highScore);
+    }
+
+    console.log(highScoreUser);
+    console.log(highScore);
+    $("#highScoreUser").text(`Lead Player ${highScoreUser}`);
+    $("#highScore").text(`High Score: ${highScore}`);
+
+    // If any errors are experienced, log them to console.
+  }, function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+  });
+
 
 
 // ================================================================
+
