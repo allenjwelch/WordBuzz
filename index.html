@@ -20,7 +20,8 @@
 <body>
   <div class="header">header
     <div class="ui secondary menu signIn">
-      <div class="right menu">Sign In
+      <div class="right menu">
+        <h3 id="loginMessage"></h3>
         <i class="user big icon"></i>
       </div>
     </div>
@@ -39,12 +40,6 @@
         <input type="text" id="userEmail" name="email" placeholder="Email">
         <input type="password" id="userPassword" name="password" placeholder="Password">
 
-        <!-- Container where we'll display the user details -->
-        <div class="quickstart-user-details-container">
-          Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-          <div>Firebase auth <code>currentUser</code> object value:</div>
-          <!-- <pre><code id="quickstart-account-details">null</code></pre> -->
-        </div>
       </div>
     </div>
     
@@ -52,7 +47,6 @@
       <button class="ui orange button" id="btnLogin" name="login">Login</button>
       <button class="ui orange button" id="btnSignUp" name="signup">Sign Up</button>
       <button class="ui orange button disabled" id="btnLogout" name="logout">Logout</button>
-
     </div>
   </div>
 
@@ -68,7 +62,9 @@
     </div>
   </div>
   
-  <div class="buttons">buttons</div>
+  <div class="buttons">
+    <h4>Buzz Words!</h4>
+  </div>
   
   <div class="scoreBoard">scoreboard
     <table class="ui selectable inverted table">
